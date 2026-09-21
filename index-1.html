@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <title>الطيب محمد همام | الصفحة الشخصية</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #050b16;
+      color: #fff;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 22, 0.97);
+      border-bottom: 1px solid #1d3452;
+      padding: 14px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      color: #4da6ff;
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #dce7f5;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #4da6ff;
+    }
+
+    section {
+      padding: 70px 6%;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero-text {
+      max-width: 680px;
+    }
+
+    .welcome {
+      color: #4da6ff;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 62px);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      color: #4da6ff;
+    }
+
+    .hero h3 {
+      color: #c5d4e7;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #9db0c8;
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1677d2;
+      padding: 11px 22px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      background: #258cf0;
+      transform: translateY(-2px);
+    }
+
+    .hero-card,
+    .about-box,
+    .project,
+    .contact-box {
+      background: #0b1424;
+      border: 1px solid #1d3452;
+      box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    }
+
+    .hero-card {
+      width: 300px;
+      padding: 35px 25px;
+      border-radius: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .hero-icon {
+      font-size: 75px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card h2 {
+      color: #4da6ff;
+    }
+
+    .hero-card p {
+      color: #8fa3bd;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #8fa3bd;
+    }
+
+    .about-box,
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 18px;
+    }
+
+    .about-box > p {
+      color: #b7c6d9;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .info-box {
+      background: #07101e;
+      border: 1px solid #172d48;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .info-box h4 {
+      color: #4da6ff;
+      margin-bottom: 5px;
+    }
+
+    .info-box p {
+      color: #dce7f5;
+    }
+
+    .skills {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .skill {
+      margin-bottom: 22px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+    }
+
+    .skill-name span:last-child {
+      color: #4da6ff;
+    }
+
+    .bar {
+      height: 12px;
+      background: #111e31;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 90%;
+      background: #1677d2;
+      border-radius: 20px;
+    }
+
+    .projects {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    .project-icon {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      color: #4da6ff;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #8fa3bd;
+    }
+
+    .hobby {
+      text-align: center;
+      background: #07101e;
+    }
+
+    .hobby-icon {
+      font-size: 70px;
+      margin-bottom: 8px;
+    }
+
+    .hobby h2 {
+      color: #4da6ff;
+      margin-bottom: 8px;
+    }
+
+    .hobby p {
+      color: #aebed1;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .phone {
+      display: block;
+      direction: ltr;
+      color: #4da6ff;
+      font-size: 27px;
+      font-weight: bold;
+      margin: 18px 0;
+    }
+
+    .whatsapp {
+      background: #168c55;
+    }
+
+    .whatsapp:hover {
+      background: #20a866;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #17243a;
+      color: #71869f;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      nav {
+        flex-direction: column;
+        padding: 12px 4%;
+      }
+
+      .nav-links {
+        gap: 9px 14px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 65px;
+      }
+
+      .hero h3 {
+        font-size: 19px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .info,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 22px;
+      }
+
+      .phone {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">الطيب محمد همام</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">الرئيسية</a></li>
+      <li><a href="#about">عني</a></li>
+      <li><a href="#skills">مهاراتي</a></li>
+      <li><a href="#projects">مشاريعي</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <div class="welcome">👋 مرحباً، أنا</div>
+
+      <h1><span>الطيب محمد همام</span></h1>
+
+      <h3>💻 طالب تقنية المعلومات</h3>
+
+      <p>
+        أهلاً بيك في موقعي الشخصي.
+        أنا مهتم بتطوير نفسي في مجال تقنية المعلومات،
+        وأحب الرسم والإبداع وتعلم مهارات جديدة.
+      </p>
+
+      <a href="#about" class="btn">اعرف عني أكثر</a>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-icon">🎨</div>
+      <h2>الطيب محمد همام</h2>
+      <p>مهتم بالرسم والإبداع</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>من أنا؟</h2>
+      <p>نبذة بسيطة عني</p>
+    </div>
+
+    <div class="about-box">
+      <p>
+        أنا <strong>الطيب محمد همام</strong>،
+        طالب تقنية معلومات، وأسعى لتطوير نفسي
+        واكتساب مهارات جديدة، ومن أهم المهارات
+        التي أحبها وأطورها <strong>الرسم</strong>.
+      </p>
+
+      <div class="info">
+        <div class="info-box">
+          <h4>🎓 التخصص</h4>
+          <p>تقنية المعلومات</p>
+        </div>
+
+        <div class="info-box">
+          <h4>🎨 المهارة</h4>
+          <p>الرسم</p>
+        </div>
+
+        <div class="info-box">
+          <h4>💡 الاهتمام</h4>
+          <p>التكنولوجيا والإبداع</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <h2>مهاراتي</h2>
+      <p>المهارة التي أعمل على تطويرها</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill">
+        <div class="skill-name">
+          <span>🎨 الرسم</span>
+          <span>90%</span>
+        </div>
+
+        <div class="bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h2>مشاريعي</h2>
+      <p>بعض الأفكار والأعمال</p>
+    </div>
+
+    <div class="projects">
+      <div class="project">
+        <div class="project-icon">🎨</div>
+        <h3>الرسم والإبداع</h3>
+        <p>
+          أعمال ورسومات أعمل عليها لتطوير
+          موهبتي في الرسم والإبداع.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-icon">💻</div>
+        <h3>IT Learning</h3>
+        <p>
+          رحلة تعلم وتطوير مهاراتي في مجال
+          تقنية المعلومات.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-icon">🖼️</div>
+        <h3>معرض رسوماتي</h3>
+        <p>
+          مساحة مستقبلية لعرض الرسومات
+          والأعمال الفنية الخاصة بي.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hobby">
+    <div class="hobby-icon">🎨</div>
+    <h2>الرسم</h2>
+    <p>
+      الرسم بالنسبة لي وسيلة للتعبير عن الأفكار
+      والإبداع، وأعمل على تطوير هذه المهارة
+      باستمرار.
+    </p>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>تواصل معي</h2>
+      <p>يسعدني تواصلك معي</p>
+    </div>
+
+    <div class="contact-box">
+      <p>📱 رقم الهاتف</p>
+
+      <div class="phone">0901023399</div>
+
+      <a
+        href="https://wa.me/249901023399"
+        class="btn whatsapp"
+        target="_blank"
+        rel="noopener"
+      >
+        💬 تواصل عبر WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 الطيب محمد همام | Information Technology
+  </footer>
+
+</body>
+</html>
